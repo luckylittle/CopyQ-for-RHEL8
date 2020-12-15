@@ -1,4 +1,4 @@
-# CopyQ-3.12.0-1.el8
+# CopyQ-3.13.0-1.el8
 
 ## Installation
 
