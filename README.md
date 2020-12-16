@@ -2,7 +2,14 @@
 
 ## Installation
 
-`sudo dnf install https://github.com/luckylittle/CopyQ-for-RHEL8/raw/master/CopyQ-3.13.0-1.el8.x86_64.rpm`
+`sudo dnf install -y https://github.com/luckylittle/CopyQ-for-RHEL8/raw/master/CopyQ-3.13.0-1.el8.x86_64.rpm`
+
+|Table                |               |
+|---------------------|---------------|
+|Installed packages:  | 45            |
+|Total size:          | 18 M          |
+|Total download size: | 16 M          |
+|Installed size:      | 56 M          |
 
 ## Checksums
 
@@ -24,7 +31,7 @@ URL:            https://hluk.github.io/CopyQ/
 Vendor:         Hluk
 Source:         https://github.com/hluk/%{name}/archive/v%{version}.tar.gz
 Prefix:         %{_prefix}
-Packager: 	lmaly@redhat.com
+Packager:       lmaly@redhat.com
 BuildRoot:      %{_tmppath}/%{name}-root
 
 %description
@@ -156,3 +163,7 @@ This can be changed with copyq config tray_menu_open_on_left_click true.
 ## Packager
 
 lmaly@redhat.com
+
+---
+
+_Last update: Wed Dec 16 02:43:02 UTC 2020_
