@@ -2,7 +2,7 @@
 
 ## Installation
 
-`sudo dnf install -y `
+`sudo dnf install -y https://github.com/luckylittle/CopyQ-for-RHEL8/releases/download/v6.1.0/CopyQ-6.1.0-1.el8.x86_64.rpm`
 
 ## Checksums
 
