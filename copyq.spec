@@ -1,5 +1,5 @@
 Name:           CopyQ
-Version:        6.1.0
+Version:        6.2.0
 Release:        1%{?dist}
 Summary:        CopyQ monitors system clipboard and saves its content in customized tabs.
 Group:          Applications/Multimedia
@@ -99,36 +99,33 @@ make DESTDIR=$RPM_BUILD_ROOT install
 
 
 %changelog
-* Sat Mar 05 00:00:00 AEDT 2022 Hulk
+* Sat Jul 06 00:00:00 AEDT 2022 Hulk
   Added
-  - Users can now customize shortcuts for the built-in editor (#708).
-  - Users can now set default style sheet for HTML items to override for example
-    color for hyperlinks with `a { color: lightblue }` (#1859). The new settings
-    can be found under Item configuration tab under Text sub-tab.
+    Tabs can now load at least some items from a partially corrupted data file
+    dropping the rest of the items.
+
+    Simpler and safer data saving uses Qt framework (QSaveFile).
+
+    New Settings class in scripts can be used to manage INI configuration
+    files (#1964).
+
   Changed
-  - Window geometry (size and position) restoring is now simpler: The app sets
-    geometry only initially and when the current screen/monitor changes.
+    Obscure untested Save button has been removed from Action dialog.
 
-    The mouse cursor position indicates the current screen. In case the app
-    cannot inspect the mouse pointer position (for example on some Wayland
-    compositors), it is left up to the window manager to decide to move the
-    window to another screen.
-
-    Users can still disable the automatic geometry by running the following
-    command (in Action dialog or terminal) and restarting the app:
-    copyq config restore_geometry false
   Fixed
-  - Fixes moving items in synchronized tabs after activating them from the
-    context menu (#1897).
-  - Windows: Fixes tray icon tooltip (#1864).
-  - Windows: External editor command now treats native path separators properly
-    (#1894, #1868).
-  - macOS: Fixes crash when pasting from the main window or menu (#1847).
-  - macOS: Older versions of macOS (down to 10.15) are now supported again
-    (#1866).
-  - Wayland: Fixes using correct window title icon (#1910).
-  - Wayland: Fixes retrieving UTF-8 encoded text from selection in environments
-    which supports it.
-  - Wayland: Fixes restoring window size without breaking window position (window
-    position cannot be set in most or all Wayland compositors).
+    Fixes restoring window geometry in a loop (#1946).
 
+    Fixes converting internal byte array representation in scripts in some rare
+    cases.
+
+    Fixes tray menu appearance to follow the configuration (#1896).
+
+    The search history popup menu for will be closed if mouse wheel scrolls and
+    mouse pointer is outside the menu (#1980).
+
+    macOS: Fixes pasting (#2012).
+
+    Windows: Fixes exiting the app on logout (#1249).
+
+    Windows: Workaround to treat native path separators properly and not as
+    special escape characters.
