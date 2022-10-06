@@ -1,5 +1,5 @@
 Name:           CopyQ
-Version:        6.2.0
+Version:        6.3.2
 Release:        1%{?dist}
 Summary:        CopyQ monitors system clipboard and saves its content in customized tabs.
 Group:          Applications/Multimedia
@@ -35,33 +35,12 @@ make DESTDIR=$RPM_BUILD_ROOT install
 /*
 
 %changelog
-* Sat Jul 06 00:00:00 AEDT 2022 Hulk
+* Sat Sep 27 01:28:00 GMT 2022 Hulk
   Added
-    Tabs can now load at least some items from a partially corrupted data file
-    dropping the rest of the items.
-
-    Simpler and safer data saving uses Qt framework (QSaveFile).
-
-    New Settings class in scripts can be used to manage INI configuration
-    files (#1964).
+    N/A
 
   Changed
-    Obscure untested Save button has been removed from Action dialog.
+    N/A
 
   Fixed
-    Fixes restoring window geometry in a loop (#1946).
-
-    Fixes converting internal byte array representation in scripts in some rare
-    cases.
-
-    Fixes tray menu appearance to follow the configuration (#1896).
-
-    The search history popup menu for will be closed if mouse wheel scrolls and
-    mouse pointer is outside the menu (#1980).
-
-    macOS: Fixes pasting (#2012).
-
-    Windows: Fixes exiting the app on logout (#1249).
-
-    Windows: Workaround to treat native path separators properly and not as
-    special escape characters.
+    Fixes potential crash when rendering an empty item list.

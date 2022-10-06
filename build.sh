@@ -1,5 +1,5 @@
 #!/bin/zsh
-COPYQ_VER=6.2.0
+COPYQ_VER=6.3.2
 ARCH=x86_64
 RELEASEVER=8
 # Run the build
@@ -13,3 +13,5 @@ podman cp copyq-${COPYQ_VER}-1.el${RELEASEVER}.${ARCH}:/root/rpmbuild/SRPMS/Copy
 # Cleanup container & image
 podman rm copyq-${COPYQ_VER}-1.el${RELEASEVER}.${ARCH}
 podman rmi copyq-${COPYQ_VER}-1.el${RELEASEVER}.${ARCH}
+# Cleanup UBI8
+# podman images --format "{{.ID}} {{.Repository}}" | grep registry.access.redhat.com/ubi8 | cut -d ' ' -f 1 | xargs podman rmi

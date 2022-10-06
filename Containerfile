@@ -1,7 +1,7 @@
-# Tue Jul 26 23:31:09 UTC 2022
+# Thu Oct  6 09:37:48 UTC 2022
 FROM registry.access.redhat.com/ubi8@sha256:8515a6e8a783b41249a7885c8f2c36380d58eb15dd3a377ea76ed3e932e3766d
 MAINTAINER lmaly@redhat.com
-ENV COPYQ_VER=6.2.0
+ENV COPYQ_VER=6.3.2
 RUN dnf install -y --disableplugin=subscription-manager https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
 RUN dnf install -y https://vault.centos.org/centos/8/PowerTools/x86_64/os/Packages/qt5-qtwayland-devel-5.15.2-2.el8.x86_64.rpm
 RUN dnf install -y --enablerepo=rhel-8-for-x86_64-appstream-rpms \
