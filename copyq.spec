@@ -1,5 +1,5 @@
 Name:           CopyQ
-Version:        6.3.2
+Version:        6.4.0
 Release:        1%{?dist}
 Summary:        CopyQ monitors system clipboard and saves its content in customized tabs.
 Group:          Applications/Multimedia
@@ -35,12 +35,24 @@ make DESTDIR=$RPM_BUILD_ROOT install
 /*
 
 %changelog
-* Sat Sep 27 01:28:00 GMT 2022 Hulk
+* Thu Jan 19 21:14:00 GMT+11 2023 Hulk
   Added
-    N/A
+    * Items in menu can be additionally filtered using the item notes (#2170).
+    * Items can be sorted with a custom order via scripting.
 
   Changed
-    N/A
+    * More shortcuts and even sequences of shortcuts can be now captured and assigned. This uses new QKeySequenceEdit UI widget from Qt framework.
+    * UI uses the preferred sans-serif system font in the dark theme.
 
   Fixed
-    Fixes potential crash when rendering an empty item list.
+    * Fixes copying items in order they were selected (#2124).
+    * Fixes re-selecting the edited item after external editor closes.
+    * Fixes menu theme (#2139).
+    * Avoids duplicating items from clipboard in synchronized tabs (#2236).
+    * macOS: Fixes compatibility with macOS 10.15 (#2103).
+    * Linux: Fixes synchronizing UTF-encoded text to/from primary selection (#2195)
+    * Wayland: Avoids showing window after a screen is turned on.
+    * Wayland: Avoids a rare crash while accessing clipboard data.
+    * Wayland: Fixes pasting to some XWayland apps (#2234)
+    * X11: Avoids app freeze when entering search mode (#2171).
+    * X11: Fixes capturing quickly changing clipboard text (ignores unchanged TIMESTAMP).
