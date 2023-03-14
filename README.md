@@ -6,7 +6,7 @@ https://github.com/hluk/CopyQ
 
 ## Installation
 
-`sudo dnf install -y https://github.com/luckylittle/CopyQ-for-RHEL8/releases/download/v6.4.0/CopyQ-6.4.0-1.el8.x86_64.rpm`
+`sudo dnf install -y https://github.com/luckylittle/CopyQ-for-RHEL8/releases/download/6.4.0/CopyQ-6.4.0-1.el8.x86_64.rpm`
 
 ## Md5 Checksums
 
