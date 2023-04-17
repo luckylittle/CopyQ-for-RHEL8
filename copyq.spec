@@ -1,5 +1,5 @@
 Name:           CopyQ
-Version:        6.4.0
+Version:        7.0.0
 Release:        1%{?dist}
 Summary:        CopyQ monitors system clipboard and saves its content in customized tabs.
 Group:          Applications/Multimedia
@@ -35,24 +35,18 @@ make DESTDIR=$RPM_BUILD_ROOT install
 /*
 
 %changelog
-* Thu Jan 19 21:14:00 GMT+11 2023 Hulk
+* Sun Apr 2 17:49:00 GMT+10 2023 Hulk
   Added
-    * Items in menu can be additionally filtered using the item notes (#2170).
-    * Items can be sorted with a custom order via scripting.
+    * Windows installer has an option to install for current user or all users (#1912).
 
   Changed
-    * More shortcuts and even sequences of shortcuts can be now captured and assigned. This uses new QKeySequenceEdit UI widget from Qt framework.
-    * UI uses the preferred sans-serif system font in the dark theme.
+    * The preferred format to edit is now "text/plain;charset=utf-8" with "text/plain" as fallback. Additionally, if no such format is available, "text/uri-list" is used.
+    * Toggle Clipboard Storing menu item uses static text and icon instead of changing these dynamically after each use (#2255).
+    * Settings integrity is now handled solely by Qt. Previously, additional *.bak files where created for configuration files.
+    * Commands are no longer migrated to the new format on start. The old command configuration file has been last used in version 3.9.0 (released on 2019-06-27).
+    * Native notification text length is limited now to avoid slow downs when showing notifications in some desktop environments. The limit is about 100,000 characters and 100 lines.
 
   Fixed
-    * Fixes copying items in order they were selected (#2124).
-    * Fixes re-selecting the edited item after external editor closes.
-    * Fixes menu theme (#2139).
-    * Avoids duplicating items from clipboard in synchronized tabs (#2236).
-    * macOS: Fixes compatibility with macOS 10.15 (#2103).
-    * Linux: Fixes synchronizing UTF-encoded text to/from primary selection (#2195)
-    * Wayland: Avoids showing window after a screen is turned on.
-    * Wayland: Avoids a rare crash while accessing clipboard data.
-    * Wayland: Fixes pasting to some XWayland apps (#2234)
-    * X11: Avoids app freeze when entering search mode (#2171).
-    * X11: Fixes capturing quickly changing clipboard text (ignores unchanged TIMESTAMP).
+    * Fixes Sort/Reverse Selected Items menu actions (#2267).
+    * Fixes moving items to a tab in tab bar using drag'n'drop (#1246).
+    * Fixes possibly buggy window manager frame geometry (#2247).

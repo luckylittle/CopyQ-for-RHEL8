@@ -1,6 +1,6 @@
 #!/bin/zsh
-# Mon Mar 13 23:53:58 UTC 2023
-COPYQ_VER=6.4.0
+# Mon Apr 17 00:21:08 UTC 2023
+COPYQ_VER=7.0.0
 ARCH=x86_64
 RELEASEVER=8
 # Run the build
